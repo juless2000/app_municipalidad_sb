@@ -29,6 +29,9 @@ flutter:
     - assets/imgs/
     - assets/imgs/login/
     - assets/imgs/inicio/
+    - assets/imgs/inicio/denuncias/
+    - assets/imgs/inicio/emergencias/
+    - assets/imgs/inicio/navigation/
   fonts:
     - family: Raleway
       fonts:

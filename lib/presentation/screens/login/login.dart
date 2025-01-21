@@ -186,20 +186,24 @@ class _LoginScreenState extends State<LoginScreen> {
                             // await prefs.setString(
                             //     'sNomEmpresa', dataUser.first.sEmpresa!);
 
-                            //Al darle en ingresar, seteamos la key 'auth' a true, sirve para el loadPage
-                            Future.delayed(const Duration(seconds: 3),
-                                () async {
-                              // await prefs.setBool('auth', true);
-                              context.pushReplacementNamed('menu');
-                            });
+                            // //Al darle en ingresar, seteamos la key 'auth' a true, sirve para el loadPage
+                            // Future.delayed(const Duration(seconds: 3),
+                            //     () async {
+                            //   // await prefs.setBool('auth', true);
+                            //   context.pushReplacementNamed('inicio');
+                            // });
 
                             QuickAlert.show(
-                                context: context,
-                                type: QuickAlertType.success,
-                                title: '¡Bienvenido!',
-                                text: 'Usuario',
-                                showConfirmBtn: false,
-                                autoCloseDuration: const Duration(seconds: 3));
+                              context: context,
+                              type: QuickAlertType.success,
+                              title: '¡Bienvenido!',
+                              text: 'Usuario',
+                              showConfirmBtn: false,
+                              autoCloseDuration: const Duration(seconds: 3),
+                            ).then((_) {
+                              context.pushReplacementNamed('inicio');
+                            });
+
                           // } else {
                           //   context.loaderOverlay.hide();
                           //   QuickAlert.show(

@@ -13,13 +13,11 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-    
     return MaterialApp.router(
       title: 'App Municipalidad San Bartolo',
       debugShowCheckedModeBanner: false,
       routerConfig: appRouter,
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
             localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

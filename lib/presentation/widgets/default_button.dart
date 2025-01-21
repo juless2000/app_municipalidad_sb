@@ -25,7 +25,7 @@ class DefaultButton extends StatelessWidget {
           child: Text(
             text,
             style: const TextStyle(
-                color: Colors.black54, fontSize: 15, fontFamily: 'CreatoDisplay'),
+                color: Colors.black, fontSize: 15, fontFamily: 'CreatoDisplay'),
           )),
     );
   }
