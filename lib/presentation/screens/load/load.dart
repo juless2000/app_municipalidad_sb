@@ -21,10 +21,12 @@ class _LoadPageState extends State<LoadPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SafeArea(
         child: Image.asset(
           'assets/imgs/login/load.png',
           fit: BoxFit.cover,
+          height: double.infinity,
+          width: double.infinity,
         ),
       ),
     );

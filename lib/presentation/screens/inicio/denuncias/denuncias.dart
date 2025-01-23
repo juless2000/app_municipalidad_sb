@@ -24,42 +24,62 @@ class _DenunciasPageState extends State<DenunciasPage> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: categorias.length,
-          itemBuilder: (context, index) {
-            final categoria = categorias[index];
-            return Card(
-              elevation: 2,
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              child: ListTile(
-                leading: Image.asset(
-                  categoria['icon'],
-                  width: 40,
-                  height: 40,
-                ),
-                title: Text(
-                  categoria['title'],
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(0, 74, 173, 1.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            RichText(
+              text: const TextSpan(
+                text: 'Selecciona alguna de las ',
+                style: TextStyle(color: Colors.blue, fontSize: 16, fontWeight: FontWeight.w500),
+                children: <TextSpan>[
+                  TextSpan(
+                    text: 'denuncias \ndisponibles',
+                    style: TextStyle(color: Color.fromRGBO(0, 74, 173, 1.0), fontWeight: FontWeight.w700),
                   ),
-                ),
-                subtitle: Text(
-                  categoria['subtitle'],
-                  style: const TextStyle(color: Colors.black54),
-                ),
-                trailing: const Icon(
-                  Icons.arrow_forward_ios,
-                  color: Colors.black54,
-                ),
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Seleccionaste: ${categoria['title']}')),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            Expanded(
+              child: ListView.builder(
+                itemCount: categorias.length,
+                itemBuilder: (context, index) {
+                  final categoria = categorias[index];
+                  return Card(
+                    elevation: 2,
+                    margin: const EdgeInsets.symmetric(vertical: 8),
+                    child: ListTile(
+                      leading: Image.asset(
+                        categoria['icon'],
+                        width: 40,
+                        height: 40,
+                      ),
+                      title: Text(
+                        categoria['title'],
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(0, 74, 173, 1.0),
+                        ),
+                      ),
+                      subtitle: Text(
+                        categoria['subtitle'],
+                        style: const TextStyle(color: Colors.black54),
+                      ),
+                      trailing: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.black54,
+                      ),
+                      onTap: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Seleccionaste: ${categoria['title']}')),
+                        );
+                      },
+                    ),
                   );
                 },
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
     );

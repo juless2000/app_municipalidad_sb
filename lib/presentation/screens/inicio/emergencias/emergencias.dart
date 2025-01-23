@@ -1,5 +1,6 @@
 import 'package:app_municipalidad_sb/presentation/widgets/option_card_emergencias.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class EmergenciasPage extends StatefulWidget {
   const EmergenciasPage({super.key});
@@ -12,7 +13,7 @@ class _EmergenciasPageState extends State<EmergenciasPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, 
+      backgroundColor: Colors.white,
       // Fondo blanco
       body: SafeArea(
         child: Column(
@@ -26,7 +27,7 @@ class _EmergenciasPageState extends State<EmergenciasPage> {
                   Text(
                     'Hola José Luis, 👋',
                     style: TextStyle(
-                      color:  Color.fromRGBO(0, 74, 173, 1.0),
+                      color: Color.fromRGBO(0, 74, 173, 1.0),
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
                     ),
@@ -35,8 +36,8 @@ class _EmergenciasPageState extends State<EmergenciasPage> {
                   Text(
                     '¿Qué necesitas?',
                     style: TextStyle(
-                      color:  Color.fromRGBO(0, 74, 173, 1.0), 
-                      fontSize: 27, 
+                      color: Color.fromRGBO(0, 74, 173, 1.0),
+                      fontSize: 27,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -49,17 +50,21 @@ class _EmergenciasPageState extends State<EmergenciasPage> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: GridView.count(
-                  crossAxisCount: 2, 
-                  crossAxisSpacing: 12, 
-                  mainAxisSpacing: 12, 
-                  childAspectRatio: 0.9, 
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  childAspectRatio: 0.9,
                   children: [
                     OptionCardEmergencias(
                       title: 'Ambulancia',
-                      imagePath: 'assets/imgs/inicio/emergencias/ambulancia.png',
+                      imagePath:
+                          'assets/imgs/inicio/emergencias/ambulancia.png',
                       backgroundColor: const Color(0xFFF2E1DE),
                       iconColor: Colors.black,
-                      onTap: () {},
+                      onTap: () {
+                        //Redirigir a pantalla alerta_emergencias
+                        context.pushReplacementNamed('alerta');
+                      },
                     ),
                     OptionCardEmergencias(
                       title: 'Serenazgo',
@@ -70,7 +75,8 @@ class _EmergenciasPageState extends State<EmergenciasPage> {
                     ),
                     OptionCardEmergencias(
                       title: 'Salvavidas',
-                      imagePath: 'assets/imgs/inicio/emergencias/salvavidas.png',
+                      imagePath:
+                          'assets/imgs/inicio/emergencias/salvavidas.png',
                       backgroundColor: const Color(0xFFFCF5DB),
                       iconColor: Colors.black,
                       onTap: () {},
