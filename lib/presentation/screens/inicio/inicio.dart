@@ -1,6 +1,6 @@
 import 'package:app_municipalidad_sb/presentation/widgets/bottom_navbar.dart';
 import 'package:flutter/material.dart';
-import 'package:app_municipalidad_sb/presentation/screens/inicio/tabbaremerdenun.dart';
+import 'package:app_municipalidad_sb/presentation/screens/inicio/tabbar_emerdenun.dart';
 import 'package:app_municipalidad_sb/presentation/screens/perfil/perfil.dart';
 import 'package:app_municipalidad_sb/presentation/screens/tutorial/tutorial.dart';
 

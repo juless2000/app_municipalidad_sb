@@ -1,9 +1,9 @@
-// ignore_for_file: use_super_parameters
-
+import 'package:app_municipalidad_sb/presentation/screens/inicio/denuncias/tipo_denuncia/audio_denuncia/audio_denuncia.dart';
+import 'package:app_municipalidad_sb/presentation/screens/inicio/denuncias/tipo_denuncia/imagen_video_denuncia/imagen_video_denuncia.dart';
 import 'package:flutter/material.dart';
 
 class DenunciasPage extends StatefulWidget {
-  const DenunciasPage({Key? key}) : super(key: key);
+  const DenunciasPage({super.key});
 
   @override
   State<DenunciasPage> createState() => _DenunciasPageState();
@@ -70,9 +70,21 @@ class _DenunciasPageState extends State<DenunciasPage> {
                         color: Colors.black54,
                       ),
                       onTap: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Seleccionaste: ${categoria['title']}')),
-                        );
+                        if (categoria['title'] == 'Ruidos Molestos') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AudioDenunciaPage(),
+                            ),
+                          );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ImagenVideoDenunciaPage(),
+                            ),
+                          );
+                        }
                       },
                     ),
                   );

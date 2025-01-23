@@ -1,6 +1,6 @@
+import 'package:app_municipalidad_sb/presentation/screens/inicio/emergencias/alertas/alerta_emergencias.dart';
 import 'package:app_municipalidad_sb/presentation/widgets/option_card_emergencias.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class EmergenciasPage extends StatefulWidget {
   const EmergenciasPage({super.key});
@@ -62,8 +62,13 @@ class _EmergenciasPageState extends State<EmergenciasPage> {
                       backgroundColor: const Color(0xFFF2E1DE),
                       iconColor: Colors.black,
                       onTap: () {
-                        //Redirigir a pantalla alerta_emergencias
-                        context.pushReplacementNamed('alerta');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const AlertaEmergenciasPage(),
+                          ),
+                        );
                       },
                     ),
                     OptionCardEmergencias(

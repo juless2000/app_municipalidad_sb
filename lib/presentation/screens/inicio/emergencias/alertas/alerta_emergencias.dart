@@ -1,5 +1,8 @@
 // ignore_for_file: deprecated_member_use, library_private_types_in_public_api
 
+import 'package:app_municipalidad_sb/presentation/screens/inicio/inicio.dart';
+import 'package:app_municipalidad_sb/presentation/screens/perfil/perfil.dart';
+import 'package:app_municipalidad_sb/presentation/screens/tutorial/tutorial.dart';
 import 'package:app_municipalidad_sb/presentation/widgets/bottom_navbar.dart';
 import 'package:app_municipalidad_sb/presentation/widgets/button_amarillo.dart';
 import 'package:app_municipalidad_sb/presentation/widgets/button_rojo.dart';
@@ -142,11 +145,29 @@ class _AlertaEmergenciasPageState extends State<AlertaEmergenciasPage> {
 
             // Navegar según la selección utilizando `go_router`
             if (index == 0) {
-              context.go('/inicio');
+              Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const InicioPage(),
+                          ),
+                        );
             } else if (index == 1) {
-              context.go('/perfil'); // Asegúrate de agregar esta ruta si existe
+              Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const PerfilPage(),
+                          ),
+                        );
             } else if (index == 2) {
-              context.go('/tutorial'); // Asegúrate de agregar esta ruta si existe
+              Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const TutorialPage(),
+                          ),
+                        );
             }
           });
         },
