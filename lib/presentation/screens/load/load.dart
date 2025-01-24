@@ -22,11 +22,23 @@ class _LoadPageState extends State<LoadPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Image.asset(
-          'assets/imgs/login/load.png',
-          fit: BoxFit.cover,
-          height: double.infinity,
-          width: double.infinity,
+        child: Stack(
+          children: [
+            // Fondo
+            Image.asset(
+              'assets/imgs/login/load.png',
+              fit: BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
+            ),
+            // Imagen superpuesta
+            Center(
+              child: Image.asset(
+                'assets/imgs/login/logo_load.png', // Cambia el path según tu imagen
+                width: 200, // Ajusta el tamaño de la imagen
+              ),
+            ),
+          ],
         ),
       ),
     );
